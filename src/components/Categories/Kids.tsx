@@ -77,13 +77,7 @@ export default function Kida() {
       <ToastContainer />
       {error ? (
          <div className="flex w-full items-center justify-center mt-10">
-                  <Image
-                    src={"/assets/Out_Of_Stock.jpg"}
-                    width={400}
-                    height={400}
-                    alt={"Out of Stock"}
-                    className="mb-4"
-                  />
+                
                 </div>
       ) : (
         <main className="w-full lg:w-3/4 p-6">

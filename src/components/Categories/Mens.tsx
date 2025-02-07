@@ -77,13 +77,7 @@ export default function Mens() {
       <ToastContainer />
       {error ? (
          <div className="flex w-full items-center justify-center mt-10">
-                  <Image
-                    src={"/assets/Out_Of_Stock.jpg"}
-                    width={500}
-                    height={500}
-                    alt={"Out of Stock"}
-                    className="mb-4"
-                  />
+                  
                 </div>
       ) : (
         <main className="w-full lg:w-3/4 p-6">
