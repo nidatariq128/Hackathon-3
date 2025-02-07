@@ -24,9 +24,9 @@ const Productdetail = ({ product }: { product: Product }) => {
   const handleAddToCart = () => {
     const cartItem = {
       id: product._id,
-      productName: product.productName,
+      name: product.productName, // ✅ Change `productName` to `name`
       price: product.price,
-      imageUrl: product.image?.asset?.url || '',
+      image: product.image?.asset?.url || '', // ✅ Change `imageUrl` to `image`
       quantity: 1,
     };
     addToCart(cartItem);
