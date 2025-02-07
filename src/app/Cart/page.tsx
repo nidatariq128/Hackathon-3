@@ -1,5 +1,7 @@
  'use client';
+  
 
+ 
 import React from 'react';
 import { useCart } from '@/components/CardContext';
 import Image from 'next/image';
@@ -60,7 +62,7 @@ const CartPage = () => {
                 >
                   <div className="flex gap-6">
                   <Image
-                      src={item.image}
+                      src={item?.imageUrl}
                       alt={item.productName}
                       width={100}
                       height={50}

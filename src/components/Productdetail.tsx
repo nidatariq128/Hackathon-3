@@ -17,19 +17,39 @@ interface Product {
   description: string;
 }
 
+interface CartItem {
+  name: any;
+  image: any;
+  _id: string;
+  productName: string;
+  category: string;
+  price: string;
+  colors: string[];
+  imageUrl: string;
+  description: string;
+  quantity: number;
+  id: string;
+}
+
 const Productdetail = ({ product }: { product: Product }) => {
   const { addToCart } = useCart();
   const [notification, setNotification] = useState<string>(''); // State for notification
 
   const handleAddToCart = () => {
-    const cartItem = {
-      id: product._id,
-      productName: product.productName, // ✅ Ensure correct key
-      price: product.price,
-      imageUrl: product.image?.asset?.url || '', // ✅ Ensure correct key
-      quantity: 1,
+    const cartItem: CartItem = {
+      name: product.name,                   // Using product.name for 'name'
+      image: product.image,                 // Using product.image for 'image'
+      _id: product._id,                     // Using product._id for '_id'
+      productName: product.productName,     // Using product.productName for 'productName'
+      category: product.category,           // Using product.category for 'category'
+      price: product.price,                 // Using product.price for 'price'
+      colors: product.colors,               // Using product.colors for 'colors'
+      imageUrl: product.imageUrl,           // Using product.imageUrl for 'imageUrl'
+      description: product.description,     // Using product.description for 'description'
+      quantity: 1,                          // Default quantity set to 1
+      id: product._id,                      // Assigning product._id (or another unique id) to 'id'
     };
-    addToCart(cartItem);
+    addToCart(cartItem); //yeh kha sy aa rha hai
     setNotification(`${product.productName} added to cart successfully!`);
     setTimeout(() => setNotification(''), 3000);
   };

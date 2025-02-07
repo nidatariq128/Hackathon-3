@@ -4,13 +4,17 @@ import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 // Cart Item Interface
 interface CartItem {
-  imageUrl: string | undefined;
-  name: string | undefined;
-  id: string;
+  name: any;
+  image: any;
+  _id: string;
   productName: string;
+  category: string;
   price: string;
-  quantity: number;
-  image: string;
+  colors: string[];
+  imageUrl: string;
+  description: string;
+  quantity: number,
+  id: string
 }
 
 // Wishlist Item Interface (similar to CartItem but without quantity)

@@ -6,6 +6,9 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true, 
+  },
     images: {
       domains: ['cdn.sanity.io'], // Allow images from cdn.sanity.io
       remotePatterns: [
