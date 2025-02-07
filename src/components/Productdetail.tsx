@@ -24,16 +24,15 @@ const Productdetail = ({ product }: { product: Product }) => {
   const handleAddToCart = () => {
     const cartItem = {
       id: product._id,
-      name: product.productName, // ✅ Change `productName` to `name`
+      productName: product.productName, // ✅ Ensure correct key
       price: product.price,
-      image: product.image?.asset?.url || '', // ✅ Change `imageUrl` to `image`
+      imageUrl: product.image?.asset?.url || '', // ✅ Ensure correct key
       quantity: 1,
     };
     addToCart(cartItem);
-    setNotification(`${product.productName} added to cart successfully!`); // Set notification
-    setTimeout(() => setNotification(''), 3000); // Clear notification after 3 seconds
+    setNotification(`${product.productName} added to cart successfully!`);
+    setTimeout(() => setNotification(''), 3000);
   };
-
   return (
     <div className='grid grid-cols-12 px-8 md:px-20 my-16 md:my-16 gap-6'>
       <div className='col-span-12 md:col-span-6'>
