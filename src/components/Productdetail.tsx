@@ -6,6 +6,7 @@ import { useCart } from '@/components/CardContext'; // Import the context
 import { useState } from 'react'; // Import useState to manage notification state
 
 interface Product {
+  name: any;
   image: any;
   _id: string;
   productName: string;
@@ -25,7 +26,7 @@ const Productdetail = ({ product }: { product: Product }) => {
       id: product._id,
       productName: product.productName,
       price: product.price,
-      imageUrl: product.image.asset.url,
+      imageUrl: product.image?.asset?.url || '',
       quantity: 1,
     };
     addToCart(cartItem);
