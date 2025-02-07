@@ -155,7 +155,7 @@ const Checkout = () => {
               {cart.map((item) => (
                 <div key={item.id} className="flex gap-6">
                   <Image
-                    src={item.image}
+                    src={item.imageUrl}
                     alt={item.productName}
                     width={100}  // You can adjust the width
                     height={100} // Adjust the height as well
